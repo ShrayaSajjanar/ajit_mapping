@@ -1,0 +1,12 @@
+<launch>
+  <include file="$(find ajit_mapping)/launch/camera_zr300.launch"/>
+  <include file="$(find ajit_mapping)/launch/rviz.launch"/>
+  <!-- <include file="$(find ajit_mapping)/launch/localization.launch"/> -->
+  <include file="$(find ajit_mapping)/launch/mapping.launch"/>
+  <include file="$(find ajit_mapping)/launch/move_base.launch"/>
+
+  <!-- <node pkg="tf" type="static_transform_publisher" name="map_to_baselink_tf" args="0 0 0 0 0 0 /map /base_link 10"/> -->
+  <!-- <node pkg="tf" type="static_transform_publisher" name="baselink_base_footprint_tf" args="0 0 0 0 0 0 /base_link /base_footprint 10"/> -->
+  <node pkg="tf" type="static_transform_publisher" name="map_to_odom_tf" args="0 0 0 0 0 0 /map /odom 10"/>
+  <node pkg="tf" type="static_transform_publisher" name="odom_to_baselink_tf" args="0 0 0 0 0 0 /odom /base_link 10"/>
+</launch>

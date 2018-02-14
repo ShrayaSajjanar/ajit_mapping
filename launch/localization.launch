@@ -1,0 +1,13 @@
+<launch>
+  <node pkg="humanoid_localization" type="localization_node" name="localization_node" respawn="true" output='screen'>
+    <remap from="point_cloud" to="/camera/points" />
+
+    <param name="base_frame_id" value="base_link" />
+    <param name="base_footprint_id" value="base_footprint" />
+
+    <param name="global_frame_id" value="map" />
+    <param name="odom_frame_id" value="odom" />
+    <param name="target_frame_id" value="camera_link" />
+    <param name="init_from_truepose" value="false" />
+  </node>
+</launch>
